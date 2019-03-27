@@ -1,0 +1,188 @@
+%include polycode.fmt
+%include forall.fmt
+%format `comp_` = "\mathbin{\cdot}"
+
+%if style == poly
+%subst keyword a = "\keyword{" a "}"
+%format ^^ = "\;"
+%format ## = "\!"
+%format %~ = "\,\%\mathord{\sim}\,"
+%format ~ = "\,\sim\,"
+%format family = "\keyword{family}"
+%format \* = "*"
+%format @  = "\ \texttt{@}"
+%format :<>: = "\mathbin{{:}{<}{>}{:}}"
+% format <..> = "\mathbin{{<}{..}{>}}"
+%format <..> = "\mathbin{\bullet}"
+%format <$> = "\mathbin{{\langle}{\$}{\rangle}}"
+%format <*> = "\mathbin{{\langle}{*}{\rangle}}"
+%format kind = "\keyword{kind}"
+%format ghci = "\texttt{ghci> }"
+%format >>>> = "\texttt{> }"
+% format <.>  = "\mathbin{<\mkern-8mu\circ\mkern-8mu>}"
+% format <.> = "\mathbin{{<}{.}{>}}"
+%format <.> = "\mathbin{\circ}"
+%format ++ = "\mathbin{++}"
+
+%format not = "\Varid{not}"
+%format == = "\mathbin{==}"
+%format === = "\equiv"
+%format /= = "\mathbin{{/}{=}}"
+%format && = "\mathbin{\&\&}"
+
+%% generic
+
+%format :*: = "\mathbin{{:}{\times}{:}}"
+%format :+: = "\mathbin{{:}{+}{:}}"
+
+%format L1  = L
+%format K1  = K
+%format R1  = R
+%format M1  = M
+%format U1  = U
+%format V1  = V
+%format unL1  = unL
+%format unK1  = unK
+%format unR1  = unR
+%format unM1  = unM
+%format Rec0  = K
+%format kIso = iso "_" K
+%format mIso = iso "_" M
+%format repIso = iso "_{" Rep "}"
+%format repIsoN = iso "_{" RepN "}"
+
+%format G.Generic = Generic
+%format Generic1 = Generic "_" 1
+%format Rep1 = Rep "_" 1
+%format to1 = to "_" 1
+%format from1 = from "_" 1
+
+%format Generic2 = Generic "_" 2
+%format Generic3 = Generic "_" 3
+
+%format GenericN = Generic "_" N
+%format RepN = Rep "_" N
+%format toN = to "_" N
+%format fromN = from "_" N
+
+
+
+%format RepK = Type
+
+%format TraversalC = Traversal "_" C
+%format TraversalC' = Traversal "_" C'
+
+%format l_1
+%format l_2
+%format r_1
+%format r_2
+%format gtypes_1
+%format a_1
+%format b_1
+
+%% Dicts
+
+%if False
+%format GHasTypesDict   = HasTypesDict_G
+%format gHasTypesDict   = hasTypesDict_G
+%format gtypesDict      = typeDict_G
+%format GHasField       = HasField"_"G
+%format GHasFieldC      = HasFieldC"_"G
+%format GHasParam       = HasParam"_"G
+%format GHasPosition    = HasPosition"_"G
+%format GHasTypes       = HasTypes"_"G
+%format GHasTypesC      = HasTypesC"_"G
+%format GHasConstraints = HasConstraints "_" G
+%endif
+
+%format gHasTypesDict_prod    = ghasTypesDict"_{":*:"}"
+%format gHasTypesDictKInt     = ghasTypesDict"_{"KInt"}"
+%format gHasTypesDictKTreeInt = ghasTypesDict"_{"KTreeInt"}"
+%format gHasTypesDictTreeInt  = ghasTypesDict"_{"TreeInt"}"
+%format gHasTypesDictTreeInt' = ghasTypesDict'"_{"TreeInt"}"
+%format hasTypesDictTreeInt   = hasTypesDict"_{"TreeInt"}"
+
+%format HasTypes_ = HasTypes "\_"
+
+%format incListGen_TreeInt = incListGen"_{"TreeInt"}"
+
+%format Simpl (x) = x
+%format simplIso = repIso
+%format hide x (y) = y
+
+%format typesDict = types
+%format gtypesDict = gtypes
+
+%format get1
+%format get2
+%format set1
+%format set2
+%format com1
+%format com2
+
+
+%endif
+
+%format hole  = _
+%format hole1 = _
+%format hole2 = _
+%format hole3 = _
+
+%if style == newcode
+%format (Q(x)) = "''" x
+%format (HL(x)) = "x"
+%format ^^ =
+%else
+%format (Q(x)) = TICK x
+%format (HL(x)) = "\ghl{" x "}"
+%format TICK = "{}^\prime\!"
+%format types_ = types"\_"
+%format _Ctor = "\_"Ctor
+%format _Typed = "\_"Typed
+%format _Sub = "\_"Sub
+%endif
+
+
+
+
+%format _if = if
+%format _ifIdentity = ifIdentity
+%format _ifCode = ifCode
+%format _empty = empty
+%format _emptyIdentity = emptyIdentity
+%format _emptyCode = emptyCode
+%format _fix = fix
+%format _lam = lam
+%format _empty = empty
+%format _pure = pure
+%format _newScanner = newScanner
+%format _hasNext = hasNext
+%format _nextLine = nextLine
+%format _print = print
+%format _putStr = putStr
+%format _bind = bind
+%format _when = when
+%format _whenA = whenA
+%format _just = just
+%format _tup = tup
+%format _cast = cast
+%format go_lms = goLMS
+%format _forget = forget
+%format _uncons = uncons
+%format IR_Pure = IRPure
+%format IR_Bot = IRBot
+%format IR_Char = IRChar
+%format IR_Or = IROr
+%format IR_Empty = IREmpty
+%format IR_Seq = IRSeq
+%format IR_NotNull = IRNotNull
+%format IR_Var = IRVar
+%format IR_Mu = IRMu
+%format _eq = eq
+%format _nothing = nothing
+%format _elim_prod = elimProd
+%format elem_lms = elemLMS
+%format ir_ors_lms = irOrsLMS
+%format bc_split = bcSplit
+%format tail_dropwhile = tailDropwhile
+%format take_while = takeWhile
