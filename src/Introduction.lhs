@@ -1,6 +1,6 @@
 \section{Introduction}
 
-%include sql-haskell.fmt
+%include format.fmt
 
 %if style == newcode
 \begin{code}
