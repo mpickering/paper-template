@@ -76,7 +76,7 @@
 
 \newcommand{\ghl}[1]{\colorbox{gray}{#1}}
 
-%include sql-haskell.fmt
+%include format.fmt
 \newcommand{\keyword}[1]{\mathsfbf{#1}}
 \renewcommand{\Varid}[1]{\mathsfsl{#1}}
 \renewcommand{\Conid}[1]{\mathsfsl{#1}}
