@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+PATH=/home/matt/lhs2tex/dist-newstyle/build/x86_64-linux/ghc-8.8.1/lhs2tex-1.23/build/lhs2TeX/:$PATH nix-shell default.nix --run "/home/matt/ghcide-clean/dist-newstyle/build/x86_64-linux/ghc-8.8.1/ghcide-0.1.0/x/ghcide/build/ghcide/ghcide --lsp $@"
