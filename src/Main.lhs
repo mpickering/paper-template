@@ -39,7 +39,50 @@
 %% issue of PACMPL.
 \citestyle{acmauthoryear}   %% For author/year citations
 
+\usepackage{xspace}
 
+%include format.fmt
+%\newcommand{\keyword}[1]{\mathbf{#1}}
+%\renewcommand{\Varid}[1]{\mathsfsl{#1}}
+%\renewcommand{\Conid}[1]{\mathsfsl{#1}}
+
+% code formatting style for use in type rules
+\newenvironment{inlinemathhscode}%
+  {\def\column##1##2{}%
+   \let\>\undefined\let\<\undefined\let\\\undefined
+   \newcommand\>[1][]{}\newcommand\<[1][]{}\newcommand\\[1][]{}%
+   \def\fromto##1##2##3{##3}%
+   \def\nextline{}}{}%
+
+\newcommand{\inlinemathhs}{\sethscode{inlinemathhscode}}
+
+\usepackage{xspace}
+
+% change inferrule macro to actually have three arguments
+\newcommand\labelledinferrule[3]{\inferrule{#1}{#2}~\text{\textsc{#3}}}
+% rule/judgement types
+\newcommand\ruletype[1]{\center\boxed{#1}}
+
+\newcommand\spacecorrectsep{%
+  \spacecorrectnosep
+  \vskip\blanklineskip\relax
+}
+\newcommand\spacecorrectnosep{%
+  \vskip-\belowdisplayskip\relax
+  \vskip-\abovedisplayskip\relax
+}
+
+% Rule names
+
+\newcommand{\VVar}{\textsc{V\_Var}\xspace}
+
+\newcommand{\highlight}[2]{\ensuremath{\mathchoice%
+  {\colorbox{#1}{\(\displaystyle#2\)}}%
+  {\colorbox{#1}{\(\textstyle#2\)}}%
+  {\colorbox{#1}{\(\scriptstyle#2\)}}%
+  {\colorbox{#1}{\(\scriptscriptstyle#2\)}}}}%
+
+\newcommand{\ghl}[1]{\highlight{gray!25}{#1}}
 
 %if not draft
 \newcommand{\ponders}[3]{\ignorespaces}
@@ -74,7 +117,6 @@
 \usepackage{csvsimple,booktabs, siunitx, array}
 \usepackage{sansmath}
 
-\newcommand{\ghl}[1]{\colorbox{gray}{#1}}
 
 %include format.fmt
 \newcommand{\keyword}[1]{\mathsfbf{#1}}
@@ -84,7 +126,7 @@
 
 \begin{document}
 
-\title{Title}
+\title{Cross-Stage Persistence}
 %% Author with single affiliation.
 \author{Matthew Pickering}
 %\authornote{with author1 note}          %% \authornote is optional;
@@ -143,6 +185,7 @@
 %% End of generated code
 
 
+
 %% Keywords
 %% comma separated list
 \keywords{generics, traversals, lenses}  %% \keywords are mandatory in final camera-ready submission
@@ -153,6 +196,7 @@
 %% commands, abstract environment, Computing Classification System
 %% environment and commands, and keywords command.
 \maketitle
+
 
 
 %if style == newcode
@@ -167,10 +211,12 @@ main = return ()
 %endif
 
 %if style == poly
+
 %include Introduction.lhs
+%include Formalism.lhs
 %endif
 
-\bibliography{bibliography}
+\bibliography{staging}
 \clearpage
 
 

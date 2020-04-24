@@ -1,2 +1,11 @@
 %include polycode.fmt
 %include forall.fmt
+
+%if style == newcode
+%format !! = "_=  "
+%format DATA = "data "
+%format ::= = " = "
+%else
+%format !! =
+%format DATA =
+%endif

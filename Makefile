@@ -26,7 +26,7 @@ $(SOURCE_NAMES): build-dir $(LHS)
 	@lhs2TeX -P "src:" $@.lhs -o $(BUILD)/$(notdir $@).tex
 
 compile:
-	cabal new-build generic-lens-paper
+	cabal new-build
 
 clean:
 	rm -rf $(BUILD)

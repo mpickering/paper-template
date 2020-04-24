@@ -7,6 +7,9 @@
 
 module Introduction where
 
+import Utils
+
+
 \end{code}
 %endif
 

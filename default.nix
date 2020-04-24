@@ -11,7 +11,7 @@ nixpkgs.stdenv.mkDerivation {
   name = "infinite-paper";
   src = ./.;
   buildInputs = [ tl
-                  nixpkgs.haskellPackages.lhs2tex
+                  #nixpkgs.haskellPackages.lhs2tex
                   nixpkgs.haskell.compiler.ghc881
                   nixpkgs.xsv  ];
   installPhase = ''cp build/paper.pdf $out'';
